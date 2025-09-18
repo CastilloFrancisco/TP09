@@ -15,6 +15,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        //Juego j = 
+
         return View();
     }
 }
