@@ -26,12 +26,9 @@
                 }
 
                 }
-
             return true
         }
-        
         l.style.color = "red"
-
     }
 }
 
@@ -52,10 +49,5 @@ function IngresarPalabra(palabra, pCompleta)
 
 }
 
-function IngresarPalabra(arriesgo, palabra){
-    if(arriesgo === palabra)
-    return true
-    else
-    return false
-}
+
 

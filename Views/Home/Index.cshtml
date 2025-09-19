@@ -19,16 +19,16 @@
 <form action="Comenzar" method="post">
     <div>
         <h2>Nombre del jugador:</h2>
-        <input type="text" name="Nombre" required />
+        <input type="text" name="username" required />
     </div>
 
     <div>
         <h2>Dificultad:</h2>
-        <select name="Dificultad" required>
+        <select name="dificultad" required>            
             <option value="">Seleccione...</option>
-            <option value="Facil">Facil</option>
-            <option value="Medio">Medio</option>
-            <option value="Dificil">Dificil</option>
+            <option value="1">Facil</option>
+            <option value="2">Medio</option>
+            <option value="3">Dificil</option>
         </select>
     </div>
 
@@ -47,14 +47,13 @@
         </ul>
     </div>
     <div>
-        @if (ViewBag.Jugadores != null)
+        @if (ViewBag.otrosJugadores != null)
         {
-            foreach (var jugador in ViewBag.Jugadores)
+            foreach (Usuario jugador in ViewBag.otrosJugadores)
             {
                 <ul>
-                    <li>@jugador.Nombre</li>
-                    <li>@jugador.Dificultad</li>
-                    <li>@jugador.Intentos</li>
+                    <li>@jugador.nombre</li>
+                    <li>@jugador.cantidadDeIntentos</li>
                 </ul>
             }
         }

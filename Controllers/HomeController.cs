@@ -42,13 +42,16 @@ public class HomeController : Controller
         p.inicializarJuego(username, dificultad);
         ViewBag.Palabra = p.Palabra;
 
-        return View();
+        return View("Juego");
     }
-    
+
     [HttpPost]
     public IActionResult FinJuego(int intentos)
     {
         Juego p = Objeto.StringToObject<Juego>(HttpContext.Session.GetString("partida"));
+
+        p.FinJuego(intentos);
+
 
         HttpContext.Session.SetString("partida", Objeto.ObjectToString(p));
 

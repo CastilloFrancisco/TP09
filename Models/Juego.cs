@@ -95,7 +95,7 @@ namespace TP09.Models
             do
             {
                 Random r = new Random();
-                p = ListaPalabras[r.Next(1, ListaPalabras.Count)];
+                p = ListaPalabras[r.Next(ListaPalabras.Count)];
 
             } while (p.dificultad != dificultad);
 
@@ -104,23 +104,17 @@ namespace TP09.Models
 
         public void FinJuego(int intentos)
         {
-            int n = 0;
-            bool encontrado = false;
+            JugadorActual.cantidadDeIntentos = intentos;
+
+            int index = 0;
+
             do
             {
+                index++;
 
-                if (Jugadores[n].cantidadDeIntentos >= intentos)
-                {
-                    n++;
-                }
-                else
-                {
-                    encontrado = true;
-                }
+            } while (index < Jugadores.Count && Jugadores[index].cantidadDeIntentos <= intentos);
 
-            } while (encontrado || Jugadores[n] == null);
-
-            Jugadores.Insert(n, JugadorActual);
+            Jugadores.Insert(index, JugadorActual);
         }
 
 
