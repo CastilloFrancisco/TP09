@@ -3,19 +3,32 @@
 }
 
 <input type="hidden" id="intentos" value="0" />
+<input type="hidden" id="contador" value="0" />
 
 <h2>Juego del Ahorcado</h2>
 
 <div id="palabra"></div>
-
+<h2>@ViewBag.variablemostrar</h2>
 <form>
     <input type="text" id="entrada" placeholder="Ingrese una letra" required />
-    <button type="button" id="btnLetra" onclick="IngresarLetra()">Arriesgar Letra</button>
+    <button type="button" id="btnLetra" onclick="IngresarLetra(document.getElementById('entrada').value)">Arriesgar Letra</button>
 </form>
 <form>
     <input type="text" id="entrada" placeholder="Ingrese una palabra" required />
-    <button type="button" id="btnPalabra" onclick="IngresarPalabra()">Arriesgar Palabra</button>
+    <button type="button" id="btnPalabra" onclick="IngresarPalabra(document.getElementById('entrada').value)">Arriesgar Palabra</button>
+    @ViewBag.contador += 1;
 </form>
-
+@ViewBag.intentos += 1;
+while(contador == 1){
+    @if(IngresarPalabra()){
+        <a class="menu-item" href="@Url.Action("FindelJuego", "Home")">;
+        alert("¡Ganaste! Adivinaste la palabra en " + intentos + " intentos.");
+        return RedirectToAction("Index", "Home");
+    }
+    else{
+        alert("¡Perdiste! La palabra es incorrecta.");
+        return RedirectToAction("Index", "Home");
+    }
+}
 
 <script src="~/js/juego.js"></script>
