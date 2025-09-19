@@ -12,10 +12,19 @@ namespace TP09.Models
         public List<Usuario> Jugadores { get; set; }
 
         [JsonProperty]
+        public string Palabra { get; set; }
+
+        [JsonProperty]
         public List<Palabra> ListaPalabras { get; set; }
 
         [JsonProperty]
         public Usuario JugadorActual;
+
+        public Juego()
+        {
+            Jugadores = new List<Usuario>();
+            llenarListaPalabras();
+        }
 
         private void llenarListaPalabras()
         {
@@ -76,6 +85,7 @@ namespace TP09.Models
 
             Usuario j = new Usuario(0, usuario);
             JugadorActual = j;
+            Palabra = cargarPalabra(dificultad);
 
         }
 
@@ -118,7 +128,6 @@ namespace TP09.Models
         public List<Usuario> DevolverListaUsuarios()
         {
             return Jugadores.OrderByDescending(a => a.cantidadDeIntentos).ToList();
-
         }
 
     }

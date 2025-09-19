@@ -1,4 +1,36 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function IngresarLetra(letra, palabra) {
 
-// Write your JavaScript code.
+    const letras = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    //Seguramente hay una mejor manera de hacer esto
+
+    letra = letra.toLowerCase();
+
+    if (letras.includes(letra)) {
+
+        if (palabra.includes(letra)) {
+
+            return LetrasAdivinadas;
+
+        }
+
+        Intentos++;
+
+        LetrasUsadas.Add(letra);
+
+        if (palabra.includes(letra)) {
+
+            for (let i = 0; i < palabra.length; i++) {
+
+                if (Palabra[i] == letra) {
+
+                    LetrasAdivinadas[i] = letra;
+
+                }
+
+            }
+        }
+    }
+
+           return LetrasAdivinadas;
+}
+

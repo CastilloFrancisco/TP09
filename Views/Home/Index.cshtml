@@ -4,5 +4,65 @@
 
 <div>
     <h1>Index</h1>
-    <p>Bienvenidos al sitio web de NombreProyecto</p>
+    <p>Bienvenidos al sitio web de Francisco Castillo y Bruno Roth</p>
 </div>
+
+<div>
+    <img src="~/images/logo.png" alt="Logo del Juego" width="150" />
+</div>
+<div class="fondo"></div>
+
+<div class="contenido">
+
+</div>
+
+<form action="Comenzar" method="post">
+    <div>
+        <h2>Nombre del jugador:</h2>
+        <input type="text" name="Nombre" required />
+    </div>
+
+    <div>
+        <h2>Dificultad:</h2>
+        <select name="Dificultad" required>
+            <option value="">Seleccione...</option>
+            <option value="Facil">Facil</option>
+            <option value="Medio">Medio</option>
+            <option value="Dificil">Dificil</option>
+        </select>
+    </div>
+
+    <div>
+        <button type="submit">Comenzar</button>
+    </div>
+</form>
+
+<h2>Historial de jugadores</h2>
+<section>
+    <div>
+        <ul>
+            <li>Nombre</li>
+            <li>Dificultad</li>
+            <li>Intentos</li>
+        </ul>
+    </div>
+    <div>
+        @if (ViewBag.Jugadores != null)
+        {
+            foreach (var jugador in ViewBag.Jugadores)
+            {
+                <ul>
+                    <li>@jugador.Nombre</li>
+                    <li>@jugador.Dificultad</li>
+                    <li>@jugador.Intentos</li>
+                </ul>
+            }
+        }
+        else
+        {
+            <div>
+                <h6>No hay jugadores registrados aun.</h6>
+            </div>
+        }
+    </div>
+</section>

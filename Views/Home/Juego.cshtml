@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Juego";
+}
+
+<input type="hidden" id="intentos" value="0" />
+
+<h2>Juego del Ahorcado</h2>
+
+<div id="palabra"></div>
+
+<form>
+    <input type="text" id="entrada" placeholder="Ingrese una letra" required />
+    <button type="button" id="btnLetra" onclick="IngresarLetra()">Arriesgar Letra</button>
+</form>
+<form>
+    <input type="text" id="entrada" placeholder="Ingrese una palabra" required />
+    <button type="button" id="btnPalabra" onclick="IngresarPalabra()">Arriesgar Palabra</button>
+</form>
+
+
+<script src="~/js/juego.js"></script>

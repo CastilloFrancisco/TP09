@@ -4,13 +4,24 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - NombreProyecto</title>
+    <title>@ViewData["Title"] - Ahorcado</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 
 <body>
     <header>
-        NombreProyecto
+        Ahorcado
+        <ul class="nav nav-tabs">
+              <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="~/img/logo.gif" alt="Logo" width="30" height="24" />
+                    </a>
+
+                </div>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Jugar</a>
+            </li>
+        </ul>
     </header>
 
     <main role="main">
@@ -18,7 +29,7 @@
     </main>
 
     <footer>
-        &copy; @DateTime.Now.Year - NombreProyecto
+        &copy; @DateTime.Now.Year - Francisco Castillo y Bruno Roth
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
